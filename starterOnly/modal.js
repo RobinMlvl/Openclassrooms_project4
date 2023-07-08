@@ -47,6 +47,8 @@ const location6 = document.getElementById("location6");
 const checkbox1 = document.getElementById("checkbox1");
 const checkbox2 = document.getElementById("checkbox2");
 
+const firstNameError = document.getElementById("firstError");
+
 // Keep form without resetting
 
 form.addEventListener("submit", function (e) {
@@ -76,7 +78,13 @@ function validate() {
   let checkbox1Valid;
 
   if (firstName.value.length >= 2) {
-    firstNameValid = true;
+    firstNameValid = false;
+    firstName.classList.remove("error");
+    firstNameError.style.display = "none";
+  } else {
+    firstName.classList.add("error");
+    firstNameError.style.display = "block";
+
   }
   if (lastName.value.length >= 2) {
     lastNameValid = true;
@@ -100,5 +108,5 @@ function validate() {
   if (checkbox1.checked) {
     checkbox1Valid = true;
   }
-  console.log(checkbox1Valid);
+  
 }

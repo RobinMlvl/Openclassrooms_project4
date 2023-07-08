@@ -220,10 +220,27 @@ input {
   opacity: 0;
   transition: 0.3s;
 }
+
+.formDataError {
+  font-size: 0.8em;
+  color: #e54858;
+  display: none;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: left;
+  line-height: 0.3;
+  opacity: 1;
+  transition: 0.3s;
+}
+
 .formData[data-error-visible="true"]::after {
   opacity: 1;
 }
 .formData[data-error-visible="true"] .text-control {
+  border: 2px solid #e54858;
+}
+
+.error {
   border: 2px solid #e54858;
 }
 /* 
